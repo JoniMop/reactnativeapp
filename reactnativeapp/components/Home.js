@@ -1,9 +1,17 @@
-import { View, Text, Button } from 'react-native'
+import { View, Text, Button, TextInput } from 'react-native'
 import React, { useState } from 'react'
 
 const Home = ({ navigation }) => {
-  const[name, setName] = useState("John Doe")
-  const[deptId, setDeptId] = useState("345")
+  const[name, setName] = useState("")
+  const[deptId, setDeptId] = useState("")
+
+  const onChangeName = (nameInput)=>{
+    setName(nameInput);
+  }
+
+  const onChangeDeptId = (deptIdInput)=>{
+    setDeptId(deptIdInput);
+  }
 
   const goToDashboard = ()=>{
         navigation.navigate('Dashboard', {
@@ -14,6 +22,17 @@ const Home = ({ navigation }) => {
   return (
     <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
       <Text>Home</Text>
+      <TextInput
+        value={name}
+        onChangeText={onChangeName}
+        placeholder='Enter name'
+      />
+
+       <TextInput
+        value={deptId}
+        onChangeText={onChangeDeptId}
+        placeholder='Enter dept Id'
+      />
       <Button title='Dashboard' onPress={goToDashboard} />
     </View>
   )
