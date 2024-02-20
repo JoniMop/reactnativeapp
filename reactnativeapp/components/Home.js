@@ -1,10 +1,15 @@
 import { View, Text, Button } from 'react-native'
-import React from 'react'
+import React, { useState } from 'react'
 
 const Home = ({ navigation }) => {
-  
+  const[name, setName] = useState("John Doe")
+  const[deptId, setDeptId] = useState("345")
+
   const goToDashboard = ()=>{
-        navigation.navigate('Dashboard')
+        navigation.navigate('Dashboard', {
+            name: name,
+            deptId: deptId
+        })
   }  
   return (
     <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
