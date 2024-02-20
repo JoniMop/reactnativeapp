@@ -12,6 +12,7 @@ const Dashboard = ({ route, navigation }) => {
       <Text>Dashboard</Text>
       <Text>{name} - {deptId}</Text>
       <Button title='Home' onPress={goToHome} />
+      <Button title='Go Back' onPress={() => navigation.goBack()} />
     </View>
   )
 }
