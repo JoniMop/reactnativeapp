@@ -34,6 +34,7 @@ const Home = ({ navigation }) => {
         placeholder='Enter dept Id'
       />
       <Button title='Dashboard' onPress={goToDashboard} />
+      <Button title='Movie' onPress={() => navigation.navigate("Movie")} />
     </View>
   )
 }
