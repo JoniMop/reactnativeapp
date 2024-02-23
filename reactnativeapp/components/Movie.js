@@ -1,4 +1,4 @@
-import { View, Text, TextInput, Button } from 'react-native'
+import { View, Text, TextInput, Button, FlatList, Image } from 'react-native'
 import React, { useState } from 'react'
 
 const Movie = () => {
@@ -24,6 +24,21 @@ const Movie = () => {
         placeholder="Enter movie name"
       />
       <Button title='Find movies' onPress={findMovies} />
+      {movieList.length > 0 && <View>
+        <Text>Found Matching Movies</Text>
+        <FlatList 
+            data={movieList}
+            renderItem={({item}) => {
+                return (
+                    <View>    
+                        <Image style={{width: 200, height: 150, margin: 15}} source={{uri:item.Poster}} />
+                        <Text>{item.Title}</Text>
+                        <Text>{item.Year}</Text>
+                    </View>
+                )
+            }}
+        />
+      </View>}
     </View>
   )
 }
