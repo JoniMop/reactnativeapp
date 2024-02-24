@@ -25,16 +25,20 @@ const Home = ({ navigation }) => {
       <TextInput
         value={name}
         onChangeText={onChangeName}
-        placeholder='Enter name'
+        placeholder='Enter your name'
       />
 
        <TextInput
         value={deptId}
         onChangeText={onChangeDeptId}
-        placeholder='Enter dept Id'
+        placeholder='Enter your dept Id'
       />
-      <Button title='Dashboard' onPress={goToDashboard} />
-      <Button title='Movie' onPress={() => navigation.navigate("Movie")} />
+      <View style={{paddingBottom: 20, paddingTop: 20}}>
+       <Button title='Dashboard' onPress={goToDashboard} />
+      </View>
+      <View>
+       <Button title='Movie' onPress={() => navigation.navigate("Movie")} />
+      </View>
     </View>
   )
 }

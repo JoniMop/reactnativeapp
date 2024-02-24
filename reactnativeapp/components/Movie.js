@@ -16,21 +16,25 @@ const Movie = () => {
         setSearchText('')
     }
   return (
-    <View style={{ flex: 1, alignItems: 'center' }}>
+    <View style={{ flex: 1, alignItems: 'center', paddingTop: 20 }}>
       <Text>Movie</Text>
-      <TextInput 
-        value={searchText}
-        onChangeText={onSearchMovie}
-        placeholder="Enter movie name"
-      />
-      <Button title='Find movies' onPress={findMovies} />
-      {movieList.length > 0 && <View>
+      <View style={{paddingTop: 20}}>
+        <TextInput 
+            value={searchText}
+            onChangeText={onSearchMovie}
+            placeholder="Enter movie name"
+        />
+      </View>
+      <View style={{paddingBottom: 20, paddingTop: 20}}>
+        <Button title='Find movies' onPress={findMovies} />
+      </View>
+      {movieList.length > 0 && <View style={{}}>
         <Text>Found Matching Movies</Text>
         <FlatList 
             data={movieList}
             renderItem={({item}) => {
                 return (
-                    <View>    
+                    <View style={{}}>    
                         <Image style={{width: 200, height: 150, margin: 15}} source={{uri:item.Poster}} />
                         <Text>{item.Title}</Text>
                         <Text>{item.Year}</Text>

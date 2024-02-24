@@ -11,8 +11,12 @@ const Dashboard = ({ route, navigation }) => {
     <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
       <Text>Dashboard</Text>
       <Text>{name} - {deptId}</Text>
-      <Button title='Home' onPress={goToHome} />
-      <Button title='Go Back' onPress={() => navigation.goBack()} />
+      <View style={{paddingBottom: 20, paddingTop: 20}}>
+        <Button title='Home' onPress={goToHome} />
+      </View>
+      <View>
+        <Button title='Go Back' onPress={() => navigation.goBack()} />
+      </View>
     </View>
   )
 }
