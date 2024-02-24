@@ -9,7 +9,7 @@ const Movie = () => {
     }
     const findMovies = async () => {
         console.log(searchText)
-        let respObj = await fetch(`http://www.omdbapi.com/?i=tt3896198&apikey=d72fbfd0&s=${searchText}`)
+        let respObj = await fetch(`https://www.omdbapi.com/?i=tt3896198&apikey=d72fbfd0&s=${searchText}`)
         let movieObj = await respObj.json()
         console.log(movieObj.Search)
         setMovieList(movieObj.Search)
